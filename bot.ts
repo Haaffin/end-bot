@@ -2,10 +2,9 @@ import DiscordJS from 'discord.js';
 import WOKCommands from 'wokcommands';
 import path from 'path';
 import dotenv from 'dotenv';
-import mongoose from 'mongoose';
 dotenv.config();
 
-import testSchema from './test-schema';
+const talkedRecently = new Set();
 
 const client = new DiscordJS.Client({
     intents: [
@@ -83,9 +82,26 @@ client.on('messageCreate', (message) => {
     ]
 
     if(owo.some(word => message.content.toLowerCase().includes(word))){
-        message.channel.send(`${responseArray[Math.floor(Math.random() * responseArray.length)]}`)
+        if(talkedRecently.has(message.author.id)){
+            message.reply('Wait 5 minutes before trying this again pls');
+        }
+        else{
+            message.channel.send(`${responseArray[Math.floor(Math.random() * responseArray.length)]}`)
+
+            talkedRecently.add(message.author.id);
+            setTimeout(() => {
+                talkedRecently.delete(message.author.id);
+            }, 300000);
+        }
     }
 
+    // if (talkedRecently.has(message.author.id)) {
+    //     message.channel.send("Wait 1 minute before getting typing this again. - " + message.author);
+    // } else {
+    //     if(owo.some(word => message.content.toLowerCase().includes(word))){
+    //         message.channel.send(`${responseArray[Math.floor(Math.random() * responseArray.length)]}`)
+    //     }
+    // }
 })
 
 client.login(process.env.TOKEN);
