@@ -74,6 +74,18 @@ client.on('messageCreate', (message) => {
         }
     }
 
+    let owo = ['owo', 'uwu', 'rawr', 'xD']
+
+    let responseArray = [
+        'rawr x3 nuzzles! pounces on u, uwu u so warm. couldn’t help but ur bulge from across the floor, nuzzlez yo’ necky~ murr~ hehe unzips yo baggy ass pants, oof baby u so musky take me home, pet me, N’ make me yours & dont forget to stuff me! see me wag my widdle baby tail, all for your bolgy-wolgy! kisses n lickies yo neck, i hope daddy likeies nuzzles n wuzzles yo chest, i be gettin thirsty hey i got a lil itch, u think u can help me? only seven inches long uwu PLS ADOPT ME',
+        'The UwU FitnessGwam™ Pacer Testi is a multiswage aerowbic capacity testy westy that progwessively gets more harder and harder OwO as it continues. Uwu The big boi 20 meter pacer test will begin in 30 seconds. Line up at the starti warti. The running speed starts slowly, but gets faster and faster every minute after I- a-after I > ~ < [beep]. A single lap should be awwl finished uppies evwy time you hear this sound. [ding] Remembew to run in a straight line, and run as long and fast as possible uwu for me anon. The second time you fail to complete a lappi pu before the sound, your test is OVEW OWO. The testi westi will begin on the word start. On youw mark uwu, get ready uwu, start owo.',
+        'UwU This is the LA Powice Depawtment, we awe fowwowing up on a sewies of weports of that youw huge bolgy wolgy has been distuwbing the peace in the neighbowhood, so we will be taking you and youw bolgy wolgy OwO into ouw custody, and it is pawt of the pwoceduwe fow us to nuzzle and wuzzle youw necky wecky ~ murr~ hehe UwU'
+    ]
+
+    if(owo.some(word => message.content.toLowerCase().includes(word))){
+        message.reply(`${responseArray[Math.floor(Math.random() * responseArray.length)]}`)
+    }
+
 })
 
 client.login(process.env.TOKEN);
