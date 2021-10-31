@@ -83,7 +83,7 @@ client.on('messageCreate', (message) => {
     ]
 
     if(owo.some(word => message.content.toLowerCase().includes(word))){
-        message.reply(`${responseArray[Math.floor(Math.random() * responseArray.length)]}`)
+        message.channel.send(`${responseArray[Math.floor(Math.random() * responseArray.length)]}`)
     }
 
 })
