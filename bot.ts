@@ -18,7 +18,7 @@ client.on('ready', async () => {
     new WOKCommands(client, {
         commandsDir: path.join(__dirname, 'commands'),
         typeScript : true,
-        testServers : '886511410329309225',
+        testServers : ['886511410329309225', '841804152307843072'],
         mongoUri: process.env.MONGO_URI,
 
         disabledDefaultCommands: [
@@ -94,14 +94,6 @@ client.on('messageCreate', (message) => {
             }, 300000);
         }
     }
-
-    // if (talkedRecently.has(message.author.id)) {
-    //     message.channel.send("Wait 1 minute before getting typing this again. - " + message.author);
-    // } else {
-    //     if(owo.some(word => message.content.toLowerCase().includes(word))){
-    //         message.channel.send(`${responseArray[Math.floor(Math.random() * responseArray.length)]}`)
-    //     }
-    // }
 })
 
 client.login(process.env.TOKEN);

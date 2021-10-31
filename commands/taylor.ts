@@ -3,7 +3,7 @@ import { ICommand } from "wokcommands";
 
 export default {
     category: "meme",
-    description: "Sends an image",
+    description: "Sends an image of Taylor",
     
     //slash : both means it responds to both /example and !example
     slash: 'both',
