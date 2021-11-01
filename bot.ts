@@ -40,10 +40,13 @@ client.on('messageCreate', (message) => {
     let mommy = ['mom','mother','mommy']
 
     if(message.author.bot) return;
+
+    let boomer = ['boomer', '/b']
     
-    if(message.content.toLowerCase().includes('boomer')){
-        message.channel.send('okay boomer');
+    if(boomer.some(word => message.content.includes(word))){
+        message.channel.send('you mean <@216285227142742018>?')
     }
+
     if(mommy.some(word => message.content.toLowerCase().includes(word))){
         let chance = Math.floor(Math.random() * 10 + 1);
         console.log(chance)
