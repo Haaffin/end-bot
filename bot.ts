@@ -37,29 +37,27 @@ client.on('ready', async () => {
 
 client.on('messageCreate', (message) => {
 
-    let mommy = ['mom','mother','mommy']
-
     if(message.author.bot) return;
-
-    let boomer = ['boomer', '/b']
     
-    if(boomer.some(word => message.content.includes(word))){
+    if(message.content.includes('boomer')){
         message.channel.send('you mean <@216285227142742018>?')
     }
+//if statement saying if message.content has a word in the array mommy, then send a message to the channel
 
-    if(mommy.some(word => message.content.toLowerCase().includes(word))){
-        let chance = Math.floor(Math.random() * 10 + 1);
-        console.log(chance)
-    if(chance == 10 || chance == 1){
-        if(message.content.toLowerCase().includes('fucker')){
-            message.reply('ok Freud')
+    if(message.content.toLowerCase().includes('mommy' || 'mother' || 'mom')){
+
+        if(message.channel.id == '887445834692706395'){
+            return
         }
-        else{
+    }   else {
+            let chance = Math.floor(Math.random() * 10 + 1);
+            console.log(chance)
+            if(chance == 10){
             message.reply('we get it, you have mommy issues')
         }
+ 
     }
-    else return
-    }
+
 
     let karl = ['karl', 'jacobs']
 
