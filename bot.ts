@@ -42,7 +42,7 @@ client.on('messageCreate', (message) => {
     if(message.content.includes('boomer')){
         message.channel.send('you mean <@216285227142742018>?')
     }
-//if statement saying if message.content has a word in the array mommy, then send a message to the channel
+    
 
     if(message.content.toLowerCase().includes('mommy' || 'mother' || 'mom')){
 
@@ -84,7 +84,7 @@ client.on('messageCreate', (message) => {
 
     if(owo.some(word => message.content.toLowerCase().includes(word))){
         if(talkedRecently.has(message.author.id)){
-            message.reply('Wait 5 minutes before trying this again pls');
+            message.reply('Wait 3 minutes before trying this again pls');
         }
         else{
             message.channel.send(`${responseArray[Math.floor(Math.random() * responseArray.length)]}`)
@@ -92,7 +92,7 @@ client.on('messageCreate', (message) => {
             talkedRecently.add(message.author.id);
             setTimeout(() => {
                 talkedRecently.delete(message.author.id);
-            }, 300000);
+            }, 180000);
         }
     }
 })
