@@ -37,14 +37,16 @@ client.on('ready', async () => {
 
 client.on('messageCreate', (message) => {
 
+    let content = message.content.toLowerCase();
+
     if(message.author.bot) return;
     
     if(message.content.includes('boomer')){
         message.channel.send('you mean <@216285227142742018>?')
     }
-    
 
-    if(message.content.toLowerCase().includes('mommy' || 'mother' || 'mom')){
+
+    if(content.split(' ').includes('mommy' || 'mother' || 'mom')){
 
         if(message.channel.id == '887445834692706395'){
             return
