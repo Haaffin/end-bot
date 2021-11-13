@@ -47,18 +47,19 @@ client.on('messageCreate', (message) => {
 
 
     if(content.split(' ').includes('mommy' || 'mother' || 'mom')){
-
-        if(message.channel.id == '887445834692706395'){
+        console.log(content.split(' '))
+        if(message.channel.id != '887445834692706395'){
             return
         }
-    }   else {
-            let chance = Math.floor(Math.random() * 10 + 1);
-            console.log(chance)
-            if(chance == 10){
+
+        let chance = Math.floor(Math.random() * 10 + 1);
+        console.log(chance)
+        if(chance == 10){
             message.reply('we get it, you have mommy issues')
         }
+    }   
  
-    }
+   
 
 
     let karl = ['karl', 'jacobs']
